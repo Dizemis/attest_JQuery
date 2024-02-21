@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анимированный сдвиг</title>
+    <style>
+        #animatedElement {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+<div id="animatedElement"></div>
+    <hr>
+<button id="moveLeftBtn">Влево</button>
+<button id="moveRightBtn">Вправо</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#moveLeftBtn').click(function() {
+            $('#animatedElement').animate({
+                left: '-=100px'
+            }, 'slow');
+        });
+
+        $('#moveRightBtn').click(function() {
+            $('#animatedElement').animate({
+                left: '+=100px'
+            }, 'slow');
+        });
+    });
+</script>
+</body>
+</html>
